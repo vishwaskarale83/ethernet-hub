@@ -1,4 +1,4 @@
-module ethernet_hub (
+module hub (
     input wire clk,            // System clock
     input wire reset,          // Reset signal
     
@@ -32,7 +32,7 @@ module ethernet_hub (
     wire fifo1_tx_valid, fifo2_tx_valid, fifo3_tx_valid;
 
     // Frame Parsers for each port
-    ethernet_frame_parser frame_parser_port1 (
+    frame_parser frame_parser_port1 (
         .clk(clk),
         .reset(reset),
         .rx_data(port1_rx_data),
@@ -43,7 +43,7 @@ module ethernet_hub (
         .crc_valid(crc_valid_port1)
     );
 
-    ethernet_frame_parser frame_parser_port2 (
+    frame_parser frame_parser_port2 (
         .clk(clk),
         .reset(reset),
         .rx_data(port2_rx_data),
@@ -54,7 +54,7 @@ module ethernet_hub (
         .crc_valid(crc_valid_port2)
     );
 
-    ethernet_frame_parser frame_parser_port3 (
+    frame_parser frame_parser_port3 (
         .clk(clk),
         .reset(reset),
         .rx_data(port3_rx_data),
@@ -94,7 +94,7 @@ module ethernet_hub (
     );
 
     // Hub Logic - MAC address filtering and frame forwarding
-    ethernet_hub_logic hub_logic (
+    hub_logic hub_logic (
         .clk(clk),
         .reset(reset),
 

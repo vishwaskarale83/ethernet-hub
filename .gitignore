@@ -1,0 +1,11 @@
+# Temporary files
+*.log
+*.out
+*.vcd
+*.wlf
+.DS_Store
+
+# Simulation tool files
+work/
+transcript
+vsim.wlf

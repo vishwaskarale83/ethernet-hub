@@ -1,4 +1,4 @@
-module ethernet_frame_parser (
+module frame_parser (
     input wire clk,
     input wire reset,
     input wire [7:0] rx_data,         // Incoming data from a port

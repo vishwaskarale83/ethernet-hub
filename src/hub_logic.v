@@ -1,4 +1,4 @@
-module ethernet_hub_logic (
+module hub_logic (
     input wire clk,
     input wire reset,
     
